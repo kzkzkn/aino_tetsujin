@@ -1,709 +1,904 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="株式会社AIの鉄人｜地方企業におけるAI活用のスタンダードをつくる。生成AI導入・定着化支援、DX支援、営業代行・マーケティング支援。" />
-  <title>株式会社AIの鉄人｜地方企業におけるAI活用のスタンダードをつくる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社AIの鉄人 | 群馬・北関東のAI導入・定着化支援</title>
+    <meta name="description" content="AI導入は、膝を突き合わせてこそ成功する。群馬・北関東の現場に、熱狂と生産性を。ツール任せにしない徹底した「対面伴走」で貴社の変革を支援します。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="株式会社AIの鉄人" />
-  <meta property="og:description" content="地方企業におけるAI活用のスタンダードをつくる。生成AI導入・定着化支援、DX支援、営業代行・マーケティング支援。" />
-  <meta property="og:type" content="website" />
-  <!-- <meta property="og:image" content="https://example.com/ogp.jpg" /> -->
-  <!-- <meta property="og:url" content="https://example.com/" /> -->
+    <style>
+        /* === ベース設定 === */
+        :root {
+            --color-primary: #b91c1c; /* 鉄人のエンジ色 */
+            --color-primary-dark: #991b1b;
+            --color-text: #334155;
+            --color-heading: #0f172a;
+            --color-bg-light: #f8fafc;
+            --color-bg-white: #ffffff;
+            --font-sans: 'Noto Sans JP', sans-serif;
+            --font-serif: 'Noto Serif JP', serif;
+        }
 
-  <!-- Favicon (任意) -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:#0f1b33;
-      --panel2:#0d172c;
-      --text:#e8eefc;
-      --muted:#b7c3e2;
-      --line:rgba(255,255,255,.10);
-      --brand:#7aa7ff;
-      --brand2:#8b5cf6;
-      --ok:#22c55e;
-      --shadow: 0 16px 40px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius2: 24px;
-      --max: 1120px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(122,167,255,.35), transparent 55%),
-        radial-gradient(1000px 600px at 110% 10%, rgba(139,92,246,.25), transparent 50%),
-        linear-gradient(180deg, #060b16 0%, var(--bg) 40%, #070d1a 100%);
-      letter-spacing:.01em;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(6,11,22,.65);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      min-height:70px;
-      gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:800;
-      letter-spacing:.02em;
-    }
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 10px 25px rgba(122,167,255,.25);
-      position:relative;
-    }
-    .logo:after{
-      content:"";
-      position:absolute; inset:10px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.35);
-    }
-    .nav-links{display:flex; gap:18px; align-items:center}
-    .nav-links a{
-      color:var(--muted);
-      font-weight:600;
-      font-size:14px;
-      padding:10px 10px;
-      border-radius:12px;
-    }
-    .nav-links a:hover{color:var(--text); background:rgba(255,255,255,.06)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:700;
-      box-shadow:none;
-      cursor:pointer;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.18)}
-    .btn.primary{
-      border:none;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 14px 32px rgba(122,167,255,.22);
-    }
-    .btn.primary:hover{transform:translateY(-1px)}
-    .btn.small{padding:10px 12px; font-size:14px; border-radius:12px}
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            line-height: 1.8;
+            background-color: var(--color-bg-light);
+        }
 
-    .mobile-toggle{display:none}
-    .mobile-menu{display:none}
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
 
-    header.hero{
-      padding:72px 0 28px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:28px;
-      align-items:stretch;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background:var(--ok);
-      box-shadow:0 0 0 6px rgba(34,197,94,.15);
-    }
-    h1{
-      margin:16px 0 10px;
-      font-size:44px;
-      line-height:1.1;
-      letter-spacing:.01em;
-    }
-    .lead{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.9;
-      max-width:62ch;
-    }
-    .hero-cta{
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .meta{
-      margin-top:14px;
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-      color:rgba(183,195,226,.9);
-      font-size:13px;
-    }
-    .meta span{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.04);
-    }
-    .card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .card-inner{padding:18px}
-    .hero-side{
-      display:flex; flex-direction:column; gap:14px;
-    }
-    .stat{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(15,27,51,.55);
-      padding:16px;
-    }
-    .stat .label{color:var(--muted); font-weight:700; font-size:13px}
-    .stat .value{margin-top:8px; font-size:18px; font-weight:800; line-height:1.4}
-    .stat .desc{margin-top:10px; color:rgba(183,195,226,.95); font-size:13px; line-height:1.8}
+        ul {
+            list-style: none;
+        }
 
-    section{
-      padding:56px 0;
-    }
-    .section-title{
-      font-size:26px;
-      margin:0 0 10px;
-      letter-spacing:.01em;
-    }
-    .section-lead{
-      margin:0 0 22px;
-      color:var(--muted);
-      line-height:1.9;
-      max-width:78ch;
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-    }
-    .panel{
-      border:1px solid var(--line);
-      background: rgba(15,27,51,.55);
-      border-radius: var(--radius2);
-      padding:18px;
-    }
-    .panel h3{margin:0 0 8px; font-size:18px}
-    .panel p{margin:0; color:var(--muted); line-height:1.9}
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      margin-bottom:10px;
-      color:rgba(232,238,252,.95);
-      font-weight:800;
-      font-size:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      padding:6px 10px;
-      border-radius:999px;
-    }
-    .tag .pill{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 0 0 6px rgba(122,167,255,.12);
-    }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-    .list{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.9;
-    }
-    .list li{margin:6px 0}
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .pricing{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      align-items:stretch;
-    }
-    .plan{
-      position:relative;
-      border:1px solid var(--line);
-      border-radius: var(--radius2);
-      background: rgba(15,27,51,.55);
-      padding:18px;
-      overflow:hidden;
-    }
-    .plan.featured{
-      border-color: rgba(122,167,255,.45);
-      box-shadow: 0 16px 42px rgba(122,167,255,.18);
-      background: linear-gradient(180deg, rgba(122,167,255,.14), rgba(15,27,51,.55));
-    }
-    .plan .name{font-weight:900; font-size:18px; margin:0}
-    .plan .hint{margin:8px 0 0; color:var(--muted); line-height:1.9; font-size:14px}
-    .plan .bullets{margin:12px 0 0; padding-left:18px; color:var(--muted); line-height:1.9; font-size:14px}
-    .badge{
-      position:absolute; top:14px; right:14px;
-      font-size:12px; font-weight:900;
-      padding:8px 10px;
-      border-radius:999px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      border:none;
-      color:#081022;
-    }
-    .cta-box{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      padding:18px;
-      border-radius: var(--radius2);
-      border:1px solid var(--line);
-      background: linear-gradient(135deg, rgba(122,167,255,.12), rgba(139,92,246,.10));
-    }
-    .cta-box h3{margin:0 0 6px}
-    .cta-box p{margin:0; color:var(--muted); line-height:1.9}
-    .cta-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end}
+        /* アニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .profile{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:16px;
-      align-items:start;
-    }
-    dl{
-      margin:0;
-      display:grid;
-      grid-template-columns: 160px 1fr;
-      gap:10px 14px;
-      align-items:start;
-      color:var(--muted);
-      line-height:1.8;
-    }
-    dt{font-weight:800; color:rgba(232,238,252,.92)}
-    dd{margin:0}
+        /* === ヘッダー === */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
 
-    footer{
-      border-top:1px solid var(--line);
-      padding:26px 0 34px;
-      color:rgba(183,195,226,.9);
-      font-size:13px;
-    }
-    .footer-inner{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap;
-    }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr; gap:16px}
-      h1{font-size:36px}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
-      .profile{grid-template-columns:1fr}
-      dl{grid-template-columns: 140px 1fr}
-      .nav-links{display:none}
-      .mobile-toggle{display:inline-flex}
-      .mobile-menu{
-        display:none;
-        border-top:1px solid var(--line);
-        padding:10px 0 14px;
-      }
-      .mobile-menu a{
-        display:block;
-        padding:10px 12px;
-        border-radius:12px;
-        color:var(--muted);
-        font-weight:700;
-      }
-      .mobile-menu a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    }
-  </style>
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background-color: var(--color-heading);
+            color: #fff;
+            padding: 5px 15px;
+            letter-spacing: 0.05em;
+        }
 
-  <!-- Organization structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "株式会社AIの鉄人",
-    "foundingDate": "2025-08-29",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "JP",
-      "addressRegion": "群馬県",
-      "addressLocality": "前橋市",
-      "streetAddress": "南町三丁目50番地2 プラザアン2階 D-53"
-    }
-  }
-  </script>
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        .btn-header {
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 4px; /* 丸みを抑えて硬派に */
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(185, 28, 28, 0.2);
+        }
+        .btn-header:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .menu-text {
+            display: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* === ファーストビュー (Hero) === */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background-color: #0f172a;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 実際の画像パスに変更してください */
+            background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Meeting+Face+to+Face'); 
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: #fff;
+            max-width: 800px;
+        }
+
+        .tag-local {
+            display: inline-block;
+            border: 1px solid var(--color-primary);
+            color: #fca5a5;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .hero-title span {
+            color: #ef4444;
+            background: linear-gradient(transparent 70%, rgba(185, 28, 28, 0.3) 70%);
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 4px; /* 丸みを抑える */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-hero:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+        .btn-sub-text {
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-left: 10px;
+            opacity: 0.9;
+        }
+
+        /* === 課題提起 === */
+        .problem-section {
+            padding: 100px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .problem-text-main {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-primary);
+            margin: 0 auto 40px;
+        }
+
+        .problem-text-sub {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .highlight-bg {
+            background: linear-gradient(transparent 60%, #fecaca 60%);
+            font-weight: 700;
+        }
+
+        /* === 失敗理由 === */
+        .reason-section {
+            padding: 80px 0;
+            background-color: var(--color-bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin-bottom: 16px;
+        }
+
+        .gap-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background: #fff;
+            padding: 60px 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .gap-circle {
+            width: 160px;
+            height: 160px;
+            background-color: #f1f5f9; /* より無機質なグレー */
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+        }
+        .gap-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .gap-text {
+            font-weight: 700;
+            color: var(--color-heading);
+            font-size: 1.1rem;
+        }
+        .gap-cross {
+            font-size: 2rem;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .reason-conclusion {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-primary);
+        }
+
+        /* === 選ばれる理由 (番号スタイルに変更) === */
+        .strengths-section {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--color-bg-light);
+            padding: 40px 30px;
+            border-left: 4px solid var(--color-primary); /* 横棒に変更 */
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        /* アイコンの代わりに数字を表示 */
+        .card-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: var(--font-serif);
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--color-heading);
+        }
+        .card-desc {
+            color: #64748b;
+        }
+
+        /* === サービス詳細 === */
+        .services-section {
+            padding: 100px 0;
+            background-color: #0f172a;
+            color: #fff;
+        }
+        
+        .service-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .service-item {
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 30px;
+        }
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-number {
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: var(--font-serif);
+            margin-top: -5px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .service-content p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .service-image {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            position: relative;
+        }
+        .service-img-label {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            border-radius: 2px;
+        }
+
+        /* === プランニング === */
+        .planning-section {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .plan-keywords {
+            margin: 30px 0;
+        }
+        .plan-tag {
+            display: inline-block;
+            background-color: #fef2f2;
+            color: var(--color-primary);
+            font-weight: 700;
+            padding: 8px 16px;
+            margin: 5px;
+            border: 1px solid #fee2e2;
+        }
+        .plan-note {
+            background-color: var(--color-bg-light);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* === 代表紹介 === */
+        .profile-section {
+            padding: 100px 0;
+            background-color: var(--color-bg-light);
+        }
+        
+        .profile-wrap {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        .profile-img-box {
+            flex: 1;
+            position: relative;
+        }
+        .profile-img-box img {
+            border-radius: 2px;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-content {
+            flex: 2;
+        }
+        .profile-role {
+            color: var(--color-primary);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+            padding-bottom: 2px;
+        }
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--color-heading);
+            margin-top: 15px;
+        }
+        .profile-company {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+        .profile-msg {
+            font-size: 1.05rem;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        /* === 会社概要 === */
+        .company-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .company-table th, .company-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .company-table th {
+            width: 30%;
+            background-color: #f8fafc;
+            color: var(--color-heading);
+            font-weight: 700;
+        }
+
+        /* === CTA (Footer) === */
+        .cta-section {
+            background-color: #0f172a;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .cta-sub {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        .footer-copy {
+            background-color: #020617;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.8rem;
+        }
+
+        /* === レスポンシブ対応 === */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 15px;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .menu-text {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-desc {
+                font-size: 1rem;
+            }
+            .btn-hero {
+                width: 100%;
+                padding: 15px 20px;
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .problem-text-main {
+                font-size: 1.5rem;
+            }
+            .problem-text-sub {
+                font-size: 1.1rem;
+            }
+
+            .gap-diagram {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .gap-cross {
+                transform: rotate(90deg);
+            }
+
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-wrap {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .company-table th, .company-table td {
+                display: block;
+                width: 100%;
+            }
+            .company-table th {
+                background-color: #f1f5f9;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- 設定：お問い合わせフォームURL -->
-  <script>
-    const CONTACT_URL = "https://example.com/contact"; // TODO: 実URLへ差し替え
-  </script>
 
-  <nav class="nav" aria-label="グローバルナビゲーション">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="株式会社AIの鉄人 トップへ">
-        <span class="logo" aria-hidden="true"></span>
-        <span>株式会社AIの鉄人</span>
-      </a>
-
-      <div class="nav-links" aria-label="ページ内リンク">
-        <a href="#mission">MISSION / VISION</a>
-        <a href="#solutions">ソリューション</a>
-        <a href="#pricing">料金プラン</a>
-        <a href="#company">会社概要</a>
-        <a href="#contact" class="btn small">お問い合わせ</a>
-      </div>
-
-      <button class="btn small mobile-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" id="mobileToggle">
-        メニュー
-      </button>
-    </div>
-
-    <div class="container mobile-menu" id="mobileMenu" aria-label="モバイルメニュー">
-      <a href="#mission">MISSION / VISION</a>
-      <a href="#solutions">ソリューション</a>
-      <a href="#pricing">料金プラン</a>
-      <a href="#company">会社概要</a>
-      <a href="#contact">お問い合わせ</a>
-    </div>
-  </nav>
-
-  <main id="top">
-    <header class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="card">
-            <div class="card-inner">
-              <span class="kicker"><span class="dot" aria-hidden="true"></span>地方企業のAI活用を「当たり前」に</span>
-              <h1>地方企業におけるAI活用のスタンダードをつくる。</h1>
-              <p class="lead">
-                株式会社AIの鉄人は、生成AI導入・定着化、業務DX、営業・マーケティングの実行支援まで一気通貫で伴走します。
-                「小さく速く」成果を出し、成功を「標準化」して組織の資産へ変えます。
-              </p>
-
-              <div class="hero-cta">
-                <a class="btn primary" href="#contact">お問い合わせ・ご相談</a>
-                <a class="btn" href="#solutions">提供ソリューションを見る</a>
-              </div>
-
-              <div class="meta" aria-label="強みの要約">
-                <span>Executive Partner</span>
-                <span>Tiny &amp; Fast</span>
-                <span>Standardize &amp; Share</span>
-              </div>
-            </div>
-          </div>
-
-          <aside class="hero-side" aria-label="補足情報">
-            <div class="stat">
-              <div class="label">対象</div>
-              <div class="value">地方企業の生産性向上・売上拡大</div>
-              <div class="desc">現場の業務と経営課題を接続し、投資対効果が見えるAI活用へ。</div>
-            </div>
-            <div class="stat">
-              <div class="label">支援領域</div>
-              <div class="value">AI × 営業 × マーケティング</div>
-              <div class="desc">導入・定着だけでなく、収益に直結する実行支援まで対応。</div>
-            </div>
-            <div class="stat">
-              <div class="label">進め方</div>
-              <div class="value">スモールスタートで最短距離</div>
-              <div class="desc">短いサイクルで検証し、再現性のある型として展開します。</div>
-            </div>
-          </aside>
+    <header>
+        <div class="header-inner">
+            <div class="logo">AIの鉄人</div>
+            <nav class="nav-menu">
+                <a href="#strengths" class="nav-link">選ばれる理由</a>
+                <a href="#services" class="nav-link">支援内容</a>
+                <a href="#company" class="nav-link">会社概要</a>
+                <a href="#contact" class="btn-header">
+                    無料相談を申し込む
+                </a>
+            </nav>
+            <div class="menu-text">MENU</div>
         </div>
-      </div>
     </header>
 
-    <!-- MISSION / VISION -->
-    <section id="mission">
-      <div class="container">
-        <h2 class="section-title">MISSION / VISION</h2>
-        <p class="section-lead">
-          私たちは、地方企業がAIを自然に使いこなし、成果を出し続けられる状態を実現します。
-        </p>
-
-        <div class="grid-2">
-          <div class="panel">
-            <div class="tag"><span class="pill" aria-hidden="true"></span>MISSION</div>
-            <h3>地方企業におけるAI活用のスタンダードをつくる。</h3>
-            <p>
-              導入の「点」ではなく、業務・組織・人材まで含めた「面」でAI活用を根付かせます。
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content fade-in">
+            <span class="tag-local">群馬・北関東の企業変革パートナー</span>
+            <h1 class="hero-title">
+                AI導入は、<br>
+                <span>膝を突き合わせて</span><br>
+                こそ成功する。
+            </h1>
+            <p class="hero-desc">
+                群馬の現場に、熱狂と生産性を。<br>
+                ツール任せにしない、徹底した「対面伴走」で貴社の変革を支援します。
             </p>
-          </div>
+            <a href="#contact" class="btn-hero">
+                無料相談を申し込む
+                <span class="btn-sub-text">（貴社に伺います）</span>
+            </a>
+        </div>
+    </section>
 
-          <div class="panel">
-            <div class="tag"><span class="pill" aria-hidden="true"></span>VISION</div>
-            <h3>AIの利活用を、地方企業の「当たり前」に。</h3>
-            <p>
-              現場で使われることを最優先に、仕組み化・標準化を通じて継続的に成果が出る状態へ導きます。
+    <section class="problem-section fade-in">
+        <div class="container">
+            <p class="problem-text-main">
+                「採用ができない。人が育たない。<br>このままでは現場が回らなくなる。」
             </p>
-          </div>
-        </div>
-
-        <div style="height:16px"></div>
-
-        <div class="panel">
-          <div class="tag"><span class="pill" aria-hidden="true"></span>VALUES</div>
-          <div class="grid-3" style="margin-top:6px">
-            <div class="panel" style="background:rgba(13,23,44,.55)">
-              <h3>経営に伴走する（Executive Partner）</h3>
-              <p>経営層や担当者と同じ目線で課題に向き合います。</p>
-            </div>
-            <div class="panel" style="background:rgba(13,23,44,.55)">
-              <h3>小さく速く（Tiny &amp; Fast）</h3>
-              <p>迅速な意思決定と実行で、いち早く成果を実感させます。</p>
-            </div>
-            <div class="panel" style="background:rgba(13,23,44,.55)">
-              <h3>標準化して分かち合う（Standardize &amp; Share）</h3>
-              <p>成功事例やノウハウを属人化させず、組織の資産へと変えます。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Solutions -->
-    <section id="solutions">
-      <div class="container">
-        <h2 class="section-title">私たちが提供するソリューション</h2>
-        <p class="section-lead">
-          地方企業の生産性向上と売上拡大を、AI・営業・マーケティングの3つの軸で強力にサポートします。
-        </p>
-
-        <div class="grid-2">
-          <div class="panel">
-            <div class="tag"><span class="pill" aria-hidden="true"></span>AI事業</div>
-            <h3>生成AI導入・定着化支援</h3>
-            <ul class="list">
-              <li><strong>AI研修・ワークショップ：</strong>プロンプト作成スキルの習得や実務活用を目的とした実践的なレクチャーを提供します。</li>
-              <li><strong>生成AIを活用したDX支援：</strong>業務フローの洗い出しから、AIによる業務自動化・代行まで、現場に即した活用を推進します。</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <div class="tag"><span class="pill" aria-hidden="true"></span>Sales / Marketing</div>
-            <h3>営業代行・マーケティング支援</h3>
-            <ul class="list">
-              <li><strong>戦略的営業支援：</strong>ターゲット選定からクロージングまで、実務経験に基づいたノウハウで貴社の営業を代行・強化します。</li>
-              <li><strong>AI活用型マーケティング：</strong>最新のAIツールを駆使した集客施策の立案や実行、コンテンツ制作（宣材写真やSNS投稿文など）を支援します。</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="height:16px"></div>
-
-        <div class="cta-box">
-          <div>
-            <h3>まずは「最短で成果が出る業務」から着手します</h3>
-            <p>
-              既存業務の棚卸しからスタートし、効果の高い領域に絞って小さく導入。勝ちパターンを標準化して横展開します。
+            <div class="divider"></div>
+            <p class="problem-text-sub">
+                そう感じているなら、<br>
+                今こそ<span class="highlight-bg">「生産性」のあり方を変える時</span>です。
             </p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn primary" href="#contact">相談する</a>
-            <a class="btn" href="#pricing">料金プランを見る</a>
-          </div>
+            <p class="problem-text-sub" style="font-size: 1.1rem; color: #64748b;">
+                AIは、ただのツールではありません。<br>
+                現場の人手不足を補い、戦力に変える<strong>「新しい人材」</strong>です。
+            </p>
         </div>
-      </div>
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing">
-      <div class="container">
-        <h2 class="section-title">料金プラン</h2>
-        <p class="section-lead">
-          現場への深い導入を目的とした「鉄人プラン」から、定期的な情報共有と相談を軸にした「AI顧問プラン」「アトムプラン」まで、
-          貴社の規模や目的に合わせた柔軟なプランを用意しております。
-        </p>
+    <section class="reason-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">なぜ、多くのAI導入は失敗するのか？</h2>
+                <p>理由はシンプルです。</p>
+            </div>
 
-        <div class="pricing" role="list">
-          <div class="plan" role="listitem">
-            <p class="name">アトムプラン</p>
-            <p class="hint">まずは最小単位で、情報共有と相談から開始したい企業向け。</p>
-            <ul class="bullets">
-              <li>定期相談（オンライン）</li>
-              <li>導入方針の整理・優先順位付け</li>
-              <li>社内展開のための簡易ガイド整備</li>
-            </ul>
-          </div>
+            <div class="gap-diagram">
+                <div class="gap-circle">
+                    <span class="gap-label">経営者の目的</span>
+                    <span class="gap-text">コスト削減<br>効率化</span>
+                </div>
+                <div class="gap-cross">×</div>
+                <div class="gap-circle">
+                    <span class="gap-label">現場の実情</span>
+                    <span class="gap-text">使い方が<br>わからない</span>
+                </div>
+                <div class="gap-cross">×</div>
+                <div class="gap-circle">
+                    <span class="gap-label">一般的な支援</span>
+                    <span class="gap-text">チャットのみ<br>現場見ず</span>
+                </div>
+            </div>
 
-          <div class="plan featured" role="listitem" aria-label="おすすめプラン">
-            <span class="badge">おすすめ</span>
-            <p class="name">AI顧問プラン</p>
-            <p class="hint">導入・定着まで伴走し、運用の型を社内に残したい企業向け。</p>
-            <ul class="bullets">
-              <li>業務棚卸しと導入ロードマップ</li>
-              <li>ワークショップ/研修の実施</li>
-              <li>運用ルール・プロンプト資産の標準化</li>
-            </ul>
-          </div>
-
-          <div class="plan" role="listitem">
-            <p class="name">鉄人プラン</p>
-            <p class="hint">現場への深い導入と、成果創出（生産性/売上）にコミットしたい企業向け。</p>
-            <ul class="bullets">
-              <li>AI活用DXの設計〜実装・自動化</li>
-              <li>営業代行/営業プロセス強化</li>
-              <li>AI活用型マーケ施策の実行支援</li>
-            </ul>
-          </div>
+            <p class="reason-conclusion">
+                失敗の最大原因は、「現場を見ない（対面で話さない）まま」<br>
+                導入を進めるからです。
+            </p>
         </div>
-
-        <div style="height:16px"></div>
-
-        <div class="panel" id="contact">
-          <h3 style="margin:0 0 8px">詳細・お見積り</h3>
-          <p style="margin:0; color:var(--muted); line-height:1.9">
-            料金プランの詳細や、貴社に最適な活用方法のご提案については、以下よりお気軽にお問い合わせください。
-          </p>
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn primary" id="contactBtn" href="#" rel="noopener">お問い合わせフォームはこちら</a>
-            <a class="btn" href="#company">会社概要を見る</a>
-          </div>
-          <p style="margin:12px 0 0; color:rgba(183,195,226,.9); font-size:13px; line-height:1.8">
-            ※フォームURLをお持ちでない場合は、Googleフォーム等のURLを設定してください。
-          </p>
-        </div>
-      </div>
     </section>
 
-    <!-- Company Profile -->
-    <section id="company">
-      <div class="container">
-        <h2 class="section-title">会社概要</h2>
-        <p class="section-lead">
-          会社情報および事業内容の一覧です。
-        </p>
-
-        <div class="profile">
-          <div class="panel">
-            <h3 style="margin:0 0 12px">Company Profile</h3>
-            <dl>
-              <dt>会社名</dt><dd>株式会社AIの鉄人</dd>
-              <dt>設立年月日</dt><dd>2025年8月29日</dd>
-              <dt>代表者</dt><dd>後藤 築</dd>
-              <dt>所在地</dt><dd>群馬県前橋市南町三丁目50番地2 プラザアン2階 D-53</dd>
-            </dl>
-          </div>
-
-          <div class="panel">
-            <h3 style="margin:0 0 12px">事業内容</h3>
-            <ul class="list" style="margin-top:0">
-              <li>生成AI導入・定着化支援</li>
-              <li>生成AIを活用したDX支援</li>
-              <li>営業代行および営業戦略のコンサルティング</li>
-              <li>マーケティング支援および広告運用代行</li>
-            </ul>
-
-            <h3 style="margin:18px 0 10px">事業目的</h3>
-            <ul class="list" style="margin-top:0">
-              <li>生成AIの導入・教育および利活用に関するコンサルティング業務</li>
-              <li>生成AIを活用した業務代行および業務プロセス改善支援</li>
-              <li>営業活動の代行、代行に伴う戦略立案および営業担当者の育成</li>
-              <li>マーケティングリサーチおよび販売促進に関する施策の企画・実行</li>
-            </ul>
-          </div>
+    <section id="strengths" class="strengths-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AIの鉄人が選ばれる理由</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h3 class="card-title">徹底した「対面・訪問」主義</h3>
+                    <p class="card-desc">
+                        Zoomやチャットでは伝わらない現場の空気感や、社員様の細かな反応を汲み取るため、私たちは「会いに行く」ことを最重要視しています。
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h3 class="card-title">実力と実績を持つプロ</h3>
+                    <p class="card-desc">
+                        大企業や上場企業でのAI推進経験を持つメンバーが、直接貴社の現場に入り込みます。机上の空論ではない、現場で使えるノウハウを提供します。
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h3 class="card-title">小さく始めて、確実に成果を</h3>
+                    <p class="card-desc">
+                        いきなり高額なシステムを入れるのではなく、まずは目の前の業務を楽にすることから始めます。スモールスタートで確実な一歩を。
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <div style="height:16px"></div>
-
-        <div class="cta-box">
-          <div>
-            <h3>地方企業のAI活用を、成果の出る形で定着させます</h3>
-            <p>導入の一歩目から、運用・標準化・収益化まで。状況に合わせて最適な形でご提案します。</p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn primary" href="#contact">お問い合わせ</a>
-            <a class="btn" href="#top">トップへ戻る</a>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <div style="font-weight:900; color:rgba(232,238,252,.95)">株式会社AIの鉄人</div>
-        <div style="margin-top:6px">地方企業におけるAI活用のスタンダードをつくる。</div>
-      </div>
-      <div style="text-align:right">
-        <div>© <span id="year"></span> AI no Tetsujin Inc. All rights reserved.</div>
-      </div>
-    </div>
-  </footer>
+    <section id="services" class="services-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #fff;">具体的な支援内容</h2>
+            </div>
+            <div class="service-container">
+                <div class="service-list">
+                    <div class="service-item">
+                        <div class="service-number">01</div>
+                        <div class="service-content">
+                            <h3>「対面」による実践型研修</h3>
+                            <p>その場でPCを並べて操作を教えるハンズオン形式。マニュアルを渡して終わりではなく、社員様が「使える」ようになるまで隣でサポートします。</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-number">02</div>
+                        <div class="service-content">
+                            <h3>24時間Q&A対応（オンライン）</h3>
+                            <p>訪問時以外も、疑問があれば即座にチャットで解消。業務の手を止めさせないスピード感で対応します。</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-number">03</div>
+                        <div class="service-content">
+                            <h3>経営伴走パートナー</h3>
+                            <p>単なるツール導入屋ではありません。AI戦略だけでなく、経営課題そのものをディスカッションする壁打ち相手として機能します。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-image">
+                    <img src="https://placehold.co/800x600/1e293b/FFF?text=Training+Image" alt="研修風景">
+                    <div class="service-img-label">実際の研修風景イメージ</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // 年号
-    document.getElementById("year").textContent = new Date().getFullYear();
+    <section class="planning-section fade-in">
+        <div class="container">
+            <h2 class="section-title">貴社の課題に合わせた、<br>最適なプランをご提案します</h2>
+            <p>
+                必要なサポートは企業によって異なります。<br>
+                現在の課題感、ご予算、組織体制をヒアリングした上で、
+            </p>
+            <div class="plan-keywords">
+                <span class="plan-tag">研修メイン</span>
+                <span class="plan-tag">定着化までのフル伴走</span>
+                <span class="plan-tag">スポットでのアドバイス</span>
+            </div>
+            <p style="margin-bottom: 20px;">など、無駄のない最適な支援内容をオーダーメイドで構築します。</p>
+            <div class="plan-note">まずはお話をお聞かせください</div>
+        </div>
+    </section>
 
-    // お問い合わせURL差し込み
-    const contactBtn = document.getElementById("contactBtn");
-    contactBtn.href = CONTACT_URL;
+    <section class="profile-section fade-in">
+        <div class="container">
+            <div class="profile-wrap">
+                <div class="profile-img-box">
+                    <img src="https://placehold.co/600x800/cbd5e1/334155?text=Goto+Kizuki" alt="代表取締役 後藤 築">
+                </div>
+                <div class="profile-content">
+                    <p class="profile-role">REPRESENTATIVE</p>
+                    <h2 class="profile-name">後藤 築</h2>
+                    <p class="profile-company">株式会社AIの鉄人 代表取締役</p>
+                    
+                    <div class="profile-msg">
+                        <p>「地方企業のために汗をかく」<br>それが、AIの鉄人の原点です。</p>
+                        <p>最先端の技術は、東京の大企業だけのものではありません。しかし、地方には「導入の仕方が分からない」「相談できる相手がいない」という理由で、素晴らしい可能性を秘めたまま足踏みをしている企業がたくさんあります。</p>
+                        <p>私は、きれいな資料を送るだけのコンサルティングはしません。泥臭くても、皆様の現場に足を運び、膝を突き合わせて一緒に悩み、一緒に解決策を考えます。</p>
+                        <p style="font-weight: 700; margin-top: 10px;">群馬から、企業の未来を一緒に作りましょう。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // モバイルメニュー
-    const toggle = document.getElementById("mobileToggle");
-    const menu = document.getElementById("mobileMenu");
+    <section id="company" class="company-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Company Profile</h2>
+            </div>
+            <table class="company-table">
+                <tr>
+                    <th>会社名</th>
+                    <td>株式会社AIの鉄人</td>
+                </tr>
+                <tr>
+                    <th>設立年月日</th>
+                    <td>2025年8月29日</td>
+                </tr>
+                <tr>
+                    <th>代表者</th>
+                    <td>後藤 築</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>
+                        〒371-0805<br>
+                        群馬県前橋市南町三丁目50番地2 プラザアン2階 D-53
+                    </td>
+                </tr>
+                <tr>
+                    <th>事業内容</th>
+                    <td>
+                        <ul style="list-style: disc; margin-left: 20px;">
+                            <li>生成AI導入・定着化支援</li>
+                            <li>生成AIを活用したDX支援</li>
+                            <li>営業代行および営業戦略のコンサルティング</li>
+                            <li>マーケティング支援および広告運用代行</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
 
-    toggle?.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      menu.style.display = isOpen ? "none" : "block";
-    });
+    <section id="contact" class="cta-section">
+        <div class="container fade-in">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">まずは一度、<br>お会いして話をしませんか？</h2>
+            <p class="cta-sub">
+                オンラインでも対応可能ですが、<br>可能な限り対面でお話を伺います。
+            </p>
+            <a href="#" class="btn-hero">
+                無料相談に申し込む
+            </a>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">※ お問い合わせフォームへ移動します</p>
+        </div>
+    </section>
 
-    // モバイルでリンククリックしたらメニューを閉じる
-    menu?.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        menu.style.display = "none";
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
+    <footer class="footer-copy">
+        <div class="container">
+            &copy; 2025 AI no Tetsujin Inc. All Rights Reserved.
+        </div>
+    </footer>
 
-    // スムーススクロール（対応ブラウザのみ）
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", (e) => {
-        const href = a.getAttribute("href");
-        if (!href || href === "#") return;
-        const target = document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        history.replaceState(null, "", href);
-      });
-    });
-  </script>
+    <script>
+        // スクロールアニメーション (Fade In)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // 一度表示したら監視を終了
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 70; 
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
