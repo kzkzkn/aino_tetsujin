@@ -1,171 +1,109 @@
-/* Basic Styles */
-body {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社AIの鉄人 | 地方企業のAI活用をスタンダードに</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    <header>
+        <div class="container">
+            <h1>株式会社AIの鉄人</h1>
+            <nav>
+                <ul>
+                    <li><a href="#mission">MISSION</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#company">COMPANY</a></li>
+                    <li><a href="https://example.com/contact" class="btn-nav">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-.section {
-    padding: 80px 0;
-}
+    <section class="hero">
+        <div class="container">
+            [cite_start]<p class="sub-copy">地方企業におけるAI活用のスタンダードをつくる [cite: 6]</p>
+            [cite_start]<h2>AIの利活用を、<br>地方企業の「当たり前」に。 [cite: 8]</h2>
+            <a href="https://example.com/contact" class="btn-main">無料で相談する</a>
+        </div>
+    </section>
 
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
-    position: relative;
-}
+    <section id="mission" class="section">
+        <div class="container">
+            <h3 class="section-title">MISSION & VALUES</h3>
+            <div class="values-grid">
+                <div class="value-item">
+                    [cite_start]<h4>経営に伴走する [cite: 13]</h4>
+                    [cite_start]<p>Executive Partnerとして、経営層と同じ目線で課題に向き合います [cite: 10, 13]。</p>
+                </div>
+                <div class="value-item">
+                    [cite_start]<h4>小さく速く [cite: 14]</h4>
+                    [cite_start]<p>Tiny & Fast。迅速な意思決定と実行で、いち早く成果を実感させます [cite: 11, 14]。</p>
+                </div>
+                <div class="value-item">
+                    [cite_start]<h4>標準化して分かち合う [cite: 21]</h4>
+                    [cite_start]<p>Standardize & Share。ノウハウを組織の資産へと変え、自走を支援します [cite: 12, 21]。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #0056b3;
-    margin: 15px auto;
-}
+    <section id="service" class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">SERVICE</h3>
+            <div class="service-card">
+                [cite_start]<h4>生成AI導入・定着化支援 [cite: 22, 23]</h4>
+                [cite_start]<p>AIの基礎からビジネス活用の勘所まで、実践形式の研修やワークショップを提供します [cite: 138, 139][cite_start]。現場の課題を解決するDX支援も行います [cite: 24]。</p>
+            </div>
+            <div class="service-card">
+                <h4>営業代行・マーケティング支援</h4>
+                <p>戦略的なターゲット選定から実務の代行まで、売上拡大に直結する伴走支援を行います。最新AIを駆使した効率的な集客施策も得意としています。</p>
+            </div>
+            <div class="contact-box">
+                <p>各プランの詳細や料金については、お気軽にお問い合わせください。</p>
+                <a href="https://example.com/contact" class="btn-sub">プラン詳細を問い合わせる</a>
+            </div>
+        </div>
+    </section>
 
-.bg-light { background: #f9f9f9; }
+    <section id="company" class="section">
+        <div class="container">
+            <h3 class="section-title">COMPANY</h3>
+            <table class="company-table">
+                <tr>
+                    <th>会社名</th>
+                    [cite_start]<td>株式会社AIの鉄人 [cite: 16]</td>
+                </tr>
+                <tr>
+                    <th>代表者</th>
+                    [cite_start]<td>代表取締役 後藤 築 [cite: 20, 123]</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    [cite_start]<td>前橋市南町三丁目50番地2 プラザアン2階 D-53 [cite: 18]</td>
+                </tr>
+                <tr>
+                    <th>設立年月日</th>
+                    [cite_start]<td>2025年8月29日 [cite: 19]</td>
+                </tr>
+                <tr>
+                    <th>事業目的</th>
+                    <td>
+                        [cite_start]・生成AIの導入・教育および利活用に関するコンサルティング [cite: 22]<br>
+                        [cite_start]・生成AIを活用した業務代行およびDX支援 [cite: 24]<br>
+                        ・営業活動の代行および戦略立案<br>
+                        ・マーケティング支援および販売促進
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
 
-/* Header */
-header {
-    background: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+    <footer>
+        <p>&copy; 2025 AIの鉄人. [cite_start]ALL RIGHTS RESERVED. [cite: 51]</p>
+    </footer>
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-h1 { font-size: 1.2rem; margin: 0; }
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
-
-nav ul li { margin-left: 20px; }
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.btn-nav {
-    background: #0056b3;
-    color: #fff !important;
-    padding: 8px 15px;
-    border-radius: 4px;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #0056b3 0%, #002d5e 100%);
-    color: #fff;
-    padding: 120px 0;
-    text-align: center;
-}
-
-.sub-copy { font-size: 1.1rem; margin-bottom: 10px; }
-.hero h2 { font-size: 2.8rem; margin-bottom: 30px; line-height: 1.3; }
-
-.btn-main {
-    display: inline-block;
-    background: #ffc107;
-    color: #333;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    transition: 0.3s;
-}
-
-.btn-main:hover { transform: scale(1.05); }
-
-/* Values Grid */
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.value-item {
-    text-align: center;
-    padding: 20px;
-}
-
-.value-item h4 { font-size: 1.2rem; color: #0056b3; }
-
-/* Service Cards */
-.service-card {
-    background: #fff;
-    padding: 30px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.contact-box {
-    text-align: center;
-    margin-top: 40px;
-    padding: 30px;
-    border: 2px dashed #ccc;
-}
-
-.btn-sub {
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-/* Table */
-.company-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.company-table th, .company-table td {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-}
-
-.company-table th { width: 30%; background: #f4f4f4; }
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.8rem;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    header .container { flex-direction: column; }
-    nav ul { margin-top: 15px; padding: 0; }
-    .hero h2 { font-size: 1.8rem; }
-    .company-table th { width: 40%; }
-}
+</body>
+</html>
